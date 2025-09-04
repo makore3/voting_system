@@ -48,7 +48,7 @@ module voting_system::voting_system {
             status: true,
             creator: tx_context::sender(ctx),
         };
-        transfer::transfer(election, tx_context::sender(ctx));
+        transfer::share_object(election);
     }
 
     /// Adds a new vote for the caller.
